@@ -8,7 +8,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("content-type", "text/html;charset=utf-8")
         self.end_headers()
-        self.wfile.write("Upload Complete")
+        self.wfile.write("Upload Complete. Please check :)")
 
     def do_POST(self):
         print self.headers
@@ -18,7 +18,7 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
         print length[0]
         if ctype == 'application/x-www-form-urlencoded':
             qs = self.rfile.read(int(length[0]))
-            fout = file(os.path.join('/Users/developer/Desktop', 'swift.png'), 'wb')
+            fout = file(os.path.join('/Users/yashwanthbabu/Desktop', 'swift.png'), 'wb')
             fout.write (qs)
             fout.close()
         self.do_GET()

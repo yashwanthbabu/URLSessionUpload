@@ -17,9 +17,9 @@ class ViewController: UIViewController, NSURLSessionDelegate, NSURLSessionTaskDe
         
         let bundle = NSBundle.mainBundle()
         let path = bundle.pathForResource("swift", ofType: "png")
-        var data: NSData = NSData(contentsOfFile: path!)
+        var data: NSData = NSData(contentsOfFile: path!)!
         
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://127.0.0.1:8000/swift.png"))
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://127.0.0.1:8000/swift.png")!)
         request.HTTPMethod = "POST"
         request.setValue("Keep-Alive", forHTTPHeaderField: "Connection")
         uploadFiles(request, data: data)
