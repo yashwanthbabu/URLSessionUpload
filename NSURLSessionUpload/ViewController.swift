@@ -21,7 +21,7 @@ class ViewController: UIViewController, NSURLSessionDelegate, NSURLSessionTaskDe
         
         var request = NSMutableURLRequest(URL: NSURL(string: "http://127.0.0.1:8000/swift.png")!)
         request.HTTPMethod = "POST"
-        request.setValue("Keep-Alive", forHTTPHeaderField: "Connection")
+        request.setValue("application/octet-stream", forHTTPHeaderField: "Connection")
         uploadFiles(request, data: data)
     }
     
